@@ -106,21 +106,21 @@ def to_lks92(lat, lng):
     return [round(northing, 3), round(easting, 3)]
 
 
-#Skujas 57 15 15.45640 25 25 53.92363
+# Skujas 57 15 15.45640 25 25 53.92363
 # ->
-#Skujas	   346600.927 586371.641
+# Skujas	   346600.927 586371.641
 
-#57°15'15.5"N 25°25'53.9"E
+# 57°15'15.5"N 25°25'53.9"E
 # ->
-#57.254293, 25.431646
+# 57.254293, 25.431646
 
-lat, lng = 57.254293, 25.431646
+latitude, longitude = 57.254293, 25.431646
 
-result = to_lks92(lat, lng)
+result = to_lks92(latitude, longitude)
 
 official = [346600.927, 586371.641]
 
-print('lat: {}\nlng: {}'.format(lat, lng))
+print('lat: {}\nlng: {}'.format(latitude, longitude))
 print('conversion to LKS92 values in [m]\n{}'.format('-' * 60))
 print('my_conversion:   {}'.format(result))
 print('official gov.lv: {}'.format(official))
