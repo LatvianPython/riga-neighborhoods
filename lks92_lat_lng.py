@@ -122,6 +122,7 @@ official = [346600.927, 586371.641]
 
 print('lat: {}\nlng: {}'.format(latitude, longitude))
 print('conversion to LKS92 values in [m]\n{}'.format('-' * 60))
+print('                 [Northing  , Easting   ]')
 print('my_conversion:   {}'.format(result))
 print('official gov.lv: {}'.format(official))
 print('error: {}, {}'.format(round(result[0] - official[0], 3), round(result[1] - official[1], 3)))
