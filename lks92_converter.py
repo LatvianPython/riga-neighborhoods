@@ -103,26 +103,27 @@ def to_lks92(lat, lng):
                terms['8'] * math.pow(delta_lng, 5.0) +
                terms['9'] * math.pow(delta_lng, 7.0))
 
-    return [round(northing, 3), round(easting, 3)]
+    return [round(easting, 3), round(northing, 3)]
 
 
-# Skujas 57 15 15.45640 25 25 53.92363
-# ->
-# Skujas	   346600.927 586371.641
+if __name__ == '__main__':
+    # Skujas 57 15 15.45640 25 25 53.92363
+    # ->
+    # Skujas	   346600.927 586371.641
 
-# 57°15'15.5"N 25°25'53.9"E
-# ->
-# 57.254293, 25.431646
+    # 57°15'15.5"N 25°25'53.9"E
+    # ->
+    # 57.254293, 25.431646
 
-latitude, longitude = 57.254293, 25.431646
+    latitude, longitude = 57.254293, 25.431646
 
-result = to_lks92(latitude, longitude)
+    result = to_lks92(latitude, longitude)
 
-official = [346600.927, 586371.641]
+    official = [586371.641, 346600.927]
 
-print('lat: {}\nlng: {}'.format(latitude, longitude))
-print('conversion to LKS92 values in [m]\n{}'.format('-' * 60))
-print('                 [Northing  , Easting   ]')
-print('my_conversion:   {}'.format(result))
-print('official gov.lv: {}'.format(official))
-print('error: {}, {}'.format(round(result[0] - official[0], 3), round(result[1] - official[1], 3)))
+    print('lat: {}\nlng: {}'.format(latitude, longitude))
+    print('conversion to LKS92 values in [m]\n{}'.format('-' * 60))
+    print('                 [Easting   , Northing  ]')
+    print('my_conversion:   {}'.format(result))
+    print('official gov.lv: {}'.format(official))
+    print('error: {}, {}'.format(round(result[0] - official[0], 3), round(result[1] - official[1], 3)))
