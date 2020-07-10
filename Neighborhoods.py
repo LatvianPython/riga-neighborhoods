@@ -6,7 +6,7 @@ from lks92_converter import to_lks92
 
 class Neighborhoods:
     def __init__(self):
-        sf = shapefile.Reader('shape_files/Apkaimes')
+        sf = shapefile.Reader("shape_files/Apkaimes")
         # points in file are [easting, northing]
 
         self._all_shapes = sf.shapes()
@@ -23,7 +23,7 @@ class Neighborhoods:
         return name
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     converter = Neighborhoods()
 
     result = converter.get_neighborhood(57.035006, 24.1310555)
